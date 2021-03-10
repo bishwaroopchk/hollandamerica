@@ -1,3 +1,5 @@
+var HtmlReporter = require('protractor-beautiful-reporter');
+
 exports.config = {
 
     seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -26,14 +28,11 @@ exports.config = {
 
     framework: 'jasmine2',
 
-    onPrepare: function () {
-        jasmine.getEnv().addReporter(
-            new jasmine2ScreenshotReporter({
-                filename: 'results.html',
-                reportOnlyFailedSpecs: false,
-                captureOnlyFailedSpecs: true
-            }));
-        },
+    onPrepare: function() {
+        jasmine.getEnv().addReporter(new HtmlReporter({
+            baseDirectory: 'tmp/screenshots'
+        }).getJasmine2Reporter());
+    },
 
     jasmineNodeOpts: {
         showColors: true,

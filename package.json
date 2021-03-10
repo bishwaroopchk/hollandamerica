@@ -1,5 +1,12 @@
 {
   "name": "HollandAmerica",
   "version": "1.0.0",
-  "dependencies": {}
+  "description": "npm module - holland america",
+  "dependencies": {
+    "protractor-html-screenshot-reporter": "*",
+    "protractor-jasmine2-screenshot-reporter": "*",
+    "jasmine-reporters": "^2.0.7",
+    "winston": "*",
+    "protractor": "^2.2.0"
+  }
 }
